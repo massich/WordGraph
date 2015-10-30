@@ -1,5 +1,5 @@
-from text.blob import TextBlob
-from text.tokenizers import WordTokenizer
+from textblob.blob import TextBlob
+from textblob.tokenizers import WordTokenizer
 from nltk.tokenize import RegexpTokenizer
 from nltk import bigrams, trigrams
 import nltk
@@ -110,7 +110,7 @@ class WordGrapher(object):
         return self.freq(word=word) / float(self.doc_word_count())
 
     def doc_word_count(self):
-        return len(self.tokens)
+        return len(list(self.tokens))
 
     def num_docs_containing(self, word):
         if self.docs is None:
